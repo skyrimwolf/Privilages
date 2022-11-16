@@ -84,20 +84,21 @@ bool KKorisnik::NadjiUsernamePassword()
     bool ind = true;
     std::fstream prvlg = Otvori("../TXT_fajlovi/PRVLG.txt", std::fstream::in);
     std::string unos1, unos2, unos3, unos4;
+    std::string cryptUsername = Zakriptuj(m_username), cryptPassword = Zakriptuj(m_password);
     unsigned short i = 0;
-    
+
     while(ind)
     {
-        prvlg.seekg(150*(i++) + 42); //skace na mesto gde su korisnik i sifra
+        prvlg.seekg(150*(i++) + 42);                                                                            //skace na mesto gde su korisnik i sifra
         
         ind = prvlg.eof() != (bool) (prvlg >> unos1);
         if(ind)
         {
-            m_registriKorisnika.userPass = m_registriKorisnika.ulogovan && Zakriptuj(m_username) == unos1;             //proverava se i je l prethodni registar uspesno upisan
-            if(m_registriKorisnika.userPass)
+            m_registriKorisnika.userPass = m_registriKorisnika.ulogovan && cryptUsername == unos1;             //proverava se i je l prethodni registar uspesno upisan
+            if (m_registriKorisnika.userPass)
             {
                 prvlg >> unos1;
-                m_registriKorisnika.userPass = Zakriptuj(m_password) == unos1;
+                m_registriKorisnika.userPass = cryptPassword == unos1;
                 
                 ind = 0;
             };
