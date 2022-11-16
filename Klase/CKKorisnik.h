@@ -21,7 +21,7 @@ private:                                                  //METODE:
     
 protected:                                                //nista nije public, ne dozvoljava se kreiranje/upravljanje bilo kog objekta koji nije objekat klase Car, stroga kontrola
     KKorisnik(int, char **);
-    ~KKorisnik();
+    virtual ~KKorisnik();
     
     void PopuniRegistre(int, char **);                    //popunjava sve registre i sprema se da salje informacije klasi Korisnik
     bool JelSuperKorisnik(int, char **);                  //odredjuje da li je superKorisnik preko argumenata komandne linije

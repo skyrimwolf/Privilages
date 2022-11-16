@@ -9,7 +9,7 @@ protected:
     
 protected:                                                          //nista nije public, ne dozvoljava se kreiranje/upravljanje bilo kog objekta koji nije objekat klase Car, stroga kontrola
     Korisnik(int, char **);
-    ~Korisnik();
+    virtual ~Korisnik();
 };
 
 Korisnik::Korisnik(int argc, char **argv) : KKorisnik(argc, argv) 

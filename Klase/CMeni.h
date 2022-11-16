@@ -7,7 +7,7 @@ protected:
     
 protected:                                                                                 //ne sme se kreirati van Cara, stroga kontrola
     Meni(bool, bool, std::string);
-    ~Meni();
+    virtual ~Meni();
     
     void PrivilegovanMeni();                                                               //popunjava registre u slucaju da je superKorisnik ulogovan
     void PopuniRegistre(std::string);                                                      //popunjava registre u slucaju da nije superKorisnik vec obican korisnik
